@@ -6,10 +6,12 @@ public class BunnyController : MonoBehaviour {
 
     private Rigidbody2D myRigidBody;
     public float bunnyJumpForce = 500f;
+    private Animator myAnim;
 
 	// Use this for initialization
 	void Start () {
         myRigidBody = GetComponent<Rigidbody2D>();
+        myAnim = GetComponent<Animator>();
 		
 	}
 	
@@ -19,5 +21,6 @@ public class BunnyController : MonoBehaviour {
         {
             myRigidBody.AddForce(transform.up * bunnyJumpForce);
         }
+        myAnim.SetFloat("vVelocity", myRigidBody.velocity.y);
 	}
 }
