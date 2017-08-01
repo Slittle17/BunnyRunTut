@@ -30,6 +30,11 @@ public class BunnyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.LoadLevel("Title");
+        }
+
         if (bunnyHurtTime == -1)
         {
 
